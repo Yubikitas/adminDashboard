@@ -1,0 +1,230 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-family: Roboto;  
+  }
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  /*
+    9. Create a root stacking context   
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+.container{ 
+    display: grid; 
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    height: 100vh; 
+    grid-template-areas: "dashboard header"
+                         "dashboard mainContent"
+
+}
+
+
+
+  .dashboard{
+    background-color: lightskyblue; 
+    grid-area: dashboard; 
+    display: grid; 
+    grid-template-columns: 250px; 
+    grid-template-rows: 10% 40% 50%;
+    padding: 30px; 
+
+  }
+
+.logo{
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    font-size: 35px; 
+    margin-bottom: 20px; 
+}
+
+
+  .dashOptions{ 
+    grid-row-start: 2;
+    grid-row-end: 3; 
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+    align-items: center; 
+    align-self: start; 
+  }
+
+  .dashSettings{
+    grid-row-start: 3;
+    grid-row-end: 4;  
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    align-self: start; 
+  }
+
+  .dashboard img{ 
+    height: 35px; 
+    width: 35px; 
+  }
+
+  .logo img{
+    height: 50px; 
+    width: 50px; 
+  }
+
+  .dashIcons{ 
+    display: grid; 
+    grid-template-columns: 1fr 2fr;
+    align-items: center; 
+  }
+
+  .header{
+    grid-area: header; 
+    display: grid; 
+    background-color: rgb(212, 241, 241);
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 2fr; 
+  }
+  
+.header img{
+    height: 30px; 
+    width: 30px; 
+    border-radius: 30px; 
+}
+
+
+
+.headerGreeting img{ 
+    height: 50px; 
+    width: 50px; 
+    border-radius: 50px;
+}
+
+.mainContent{
+    grid-area: mainContent;
+    background-color: rgba(224, 249, 253, 0.918);
+    display: grid; 
+    grid-template-columns: 2fr 1fr;
+    padding: 20px; 
+}
+
+.headerSearch{ 
+    display: grid; 
+    grid-template-columns: 30px 1fr ;
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px; 
+}
+
+.headerSearch input{
+    width: 800px; 
+    border-radius: 20px; 
+}
+
+.headerProfile{ 
+    display: grid; 
+    grid-template-columns: 30px 30px 1fr; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.lowerHeader{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    padding: 20px; 
+    grid-column-start: 1; 
+    grid-column-end: 3;
+}
+
+.headerGreeting{ 
+    display: grid; 
+    grid-template-columns: 50px 100px 1fr;
+    gap: 20px; 
+}
+
+
+.yourProjects{ 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-template-rows: repeat(auto-fit,minmax(200px,1fr)); 
+    gap: 20px; 
+}
+
+.contentCard{ 
+    height: 200px; 
+    width: 400px; 
+    background-color: white;
+    box-shadow: 2px 4px rgb(202, 201, 201); 
+    padding: 20px; 
+    border-radius: 20px;    
+    border-left: 5px solid orange;
+}
+
+
+.rightBar{ 
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+}
+
+button{ 
+    font-family: Roboto; 
+}
+
+.spaceTitle, 
+.cardTitle{ 
+    font-weight: bold; 
+    font-size: clamp(16px,18px,1em); 
+}
+
+
+.announcements,
+.trending {
+    background-color: white;
+    height: 80%; 
+    width: 60%; 
+    margin: 10px;  
+    box-shadow: 2px 4px rgb(202, 201, 201); 
+
+}
+
+button{ 
+    border-radius: 10px; 
+    background-color: rgb(255, 197, 8); 
+    color: black; 
+    width: 100px; 
+    height: 30px; 
+}
+
+.buttonOptions{ 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center;
+
+}
